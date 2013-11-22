@@ -9,6 +9,7 @@
 	<body>
 	<script href="fbsdk.js"></script>
 	<div class="container">
+		<?php include 'utils.php'; ?>
 		<?php include'header.php'; ?>
 		
 		<?php
@@ -30,7 +31,7 @@
 					break;*/
 				case 'default':
 				default:
-					include('default.php');
+					include('parts/default.php');
 					break;
 			}
 		?>
