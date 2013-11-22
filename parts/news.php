@@ -23,7 +23,7 @@
 		echo '<li><h2><a href="?part=news&Id='.$data['Id'].'">'.$data['Title'].'</a></h2> Þann '.date('j.n.Y H:i', $data['Time']).'</li>';
 		if( (isset($_GET['Id'])) && ($data['Id'] == $_GET['Id']) )
 			{echo $data['Content'];
-		echo '<div class="fb-comments" data-href="http://notendur.hi.is/ibj9/verkefni/hiddenlol/pmou/news.php?Id='.$data['Id'].'" data-numposts="5"></div>';
+		echo '<div class="fb-comments" data-href="http://notendur.hi.is/ibj9/verkefni/hiddenlol/pmou/index.php?part=news&Id='.$data['Id'].'" data-numposts="5"></div>';
 		}
 		echo "<hr>";
 	} 

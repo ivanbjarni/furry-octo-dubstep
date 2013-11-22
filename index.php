@@ -26,9 +26,9 @@
 				case 'matches':
 					include('parts/matches.php');
 					break;
-				/*case 'me':
+				case 'me':
 					include('parts/me.php');
-					break;*/
+					break;
 				case 'default':
 				default:
 					include('parts/default.php');
