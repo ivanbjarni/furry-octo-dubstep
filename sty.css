@@ -13,6 +13,12 @@ h2 a {color:white;}
 	-webkit-transition: background 0.5s ease, color 0.5s ease; /* Safari */
 }
 .btn:hover{background:#043E6B;}
+.feedbox {
+	border: 2px solid black;
+	border-radius: 5px;
+	margin:1%;
+	padding: 1%;
+}
 
 .scrollup {
 	color: #FFF;
@@ -55,6 +61,7 @@ h2 a {color:white;}
 		width:100%;
 		height:200px;
 	}
+	.feedbox {width:90%;}
 }
 @media (min-width:540px)
 {
@@ -73,5 +80,9 @@ h2 a {color:white;}
 		padding-left:10px;
 		padding-top:0px;!important
 	}
-	
+
+	.feedbox {
+		width:45.5%;
+		float: left;
+	}
 }
