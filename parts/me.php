@@ -28,6 +28,7 @@
 	}
 ?>
 
-<script src="jquery.js"></script>
-<script src="jquery.validate.js"></script>
-<script src="formhandling.js" type="text/javascript"></script>
+<script src="javascript/jquery.js"></script>
+<script src="javascript/jquery.validate.js"></script>
+<script src="javascript/formhandling.js" type="text/javascript"></script>
+<script src="javascript/passwordMeter.js" type="text/javascript"></script>
