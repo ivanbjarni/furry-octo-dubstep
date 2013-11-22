@@ -7,27 +7,27 @@
 	}
 	else if( isset($_GET['signup']))
 	{
-		echo "
-			<h1>Nýskrá</h1>
-			<form>
-				<label for='username'>Notandi:</label>
-				<input type='text' name ='username' placeholder='Notandi9001'><br>
-				<label for='password'>Lykilorð:</label>
-				<input type='password' name ='password' placeholder='*******'>
-			</form>
-		";
+		include('signup.php');
 	}
 	else
 	{
 		echo "
 			<h1>Innskrá</h1>
 			<form>
-				<label for='username'>Notandi:</label>
-				<input type='text' name ='username' placeholder='Notandi9001'><br>
-				<label for='password'>Lykilorð:</label>
-				<input type='password' name ='password' placeholder='*******'>
+				<fieldset>
+					<legend>Innskráning</legend>
+					<label for='username'>Notandi:</label>
+					<input type='text' name ='username' placeholder='Notandi9001'><br>
+					<label for='password'>Lykilorð:</label>
+					<input type='password' name ='password' placeholder='*******'><br>
+					<input type='submit' value='Innskrá!'>
+				</fieldset>
 			</form>
-			Ekki skráður? <a href='?part=me&signup=true'> Skráðu þig hér.</a>
+			Ekki skráður? <a href='?part=me&signup=step1'> Skráðu þig hér.</a>
 		";
 	}
 ?>
+
+<script src="jquery.js"></script>
+<script src="jquery.validate.js"></script>
+<script src="formhandling.js" type="text/javascript"></script>
