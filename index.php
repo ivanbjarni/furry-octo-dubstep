@@ -4,6 +4,7 @@
 		<title>Þar sem fótbolti er í fyrirrúmi</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="sty.css">
+		<link rel="stylesheet" type="text/css" href="styles/passwordMeter.css">
 		<link rel="shortcut icon" href="bolti.ico">
 	</head>
 
