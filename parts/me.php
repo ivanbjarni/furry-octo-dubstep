@@ -11,24 +11,8 @@
 	}
 	else
 	{
-		echo "
-			<h1>Innskrá</h1>
-			<form>
-				<fieldset>
-					<legend>Innskráning</legend>
-					<label for='username'>Notandi:</label>
-					<input type='text' name ='username' placeholder='Notandi9001'><br>
-					<label for='password'>Lykilorð:</label>
-					<input type='password' name ='password' placeholder='*******'><br>
-					<input type='submit' value='Innskrá!'>
-				</fieldset>
-			</form>
-			Ekki skráður? <a href='?part=me&signup=step1'> Skráðu þig hér.</a>
-		";
+		include('login.php');
 	}
 ?>
 
-<script src="javascript/jquery.js"></script>
-<script src="javascript/jquery.validate.js"></script>
-<script src="javascript/formhandling.js" type="text/javascript"></script>
-<script src="javascript/passwordMeter.js" type="text/javascript"></script>
+

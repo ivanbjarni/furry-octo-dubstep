@@ -65,6 +65,7 @@ $.fn.passwordStrength = function( options ){
 			ret += $temp;
 			i++;
 		}
+		alert(ret);
 		return ret;
 	}
 

@@ -20,6 +20,43 @@ if($_GET['signup']=='step1')
 }
 else
 {
-			
+	$db = new PDO('sqlite:football.db');
+	$error = 0;
+
+	if($_POST['username']==""){if(!$error){echo "Skráning tókst ekki";} echo ", Fylla þarf út í  nafn"; $error=1;}
+	else if (strlen($_POST['username'])>30 || strlen($_POST['username'])<6) {if(!$error){echo "Skráning tókst ekki";} echo ", Notandanafn þarf að vera á milli 6 og 30 stafir"; $error=1;}
+	if($_POST['password']==""){if(!$error){echo "Skráning tókst ekki";} echo ", Fylla þarf út í password"; $error=1;}
+	else if (strlen($_POST['password'])>30 || strlen($_POST['password'])<6) {if(!$error){echo "Skráning tókst ekki";} echo ", Lykilorð þarf að vera á milli 6 og 30 stafir"; $error=1;}
+	$eml = $_POST['email']; 
+	if($eml==""){if(!$error){echo "Skráning tókst ekki";} echo ", Fylla þarf út í email"; $error=1;}
+	else if(!filter_var($eml, FILTER_VALIDATE_EMAIL)) {if(!$error){echo "Skráning tókst ekki";} echo ", Netfang var ekki gilt. "; $error=1;}
+	
+
+	if(!$error)
+	{
+		$stmt = $db->prepare("INSERT INTO USERS (Username,Password,Email,Cash) VALUES (:un,:pw,:em,:mn)");
+
+		$stmt->bindParam(':un', $username);
+		$stmt->bindParam(':pw', $password);
+		$stmt->bindParam(':em', $email);
+		$stmt->bindParam(':mn', $money);
+		
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$email = $_POST['email'];
+		$money = 100;
+		$stmt->execute();
+
+		$errorAt = $db->errorInfo();
+		if($errorAt[1]==NULL)
+		{echo $_POST['username']." hefur verið bætt í gagnagrunninn!<br>";}
+		else
+		{echo "Villa kom upp: ".$errorAt[2];}
+	}			
 }
 ?>
+
+<script src="javascript/jquery.js"></script>
+<script src="javascript/jquery.validate.js"></script>
+<script src="javascript/formhandling.js" type="text/javascript"></script>
+<script src="javascript/passwordMeter.js" type="text/javascript"></script>
