@@ -1,9 +1,7 @@
 <?php
 	if( isset($_COOKIE['user']))
 	{
-		echo "
-			<h1>Mínar Síður</h1>
-		";
+		include('mysite.php');
 	}
 	else if( isset($_GET['signup']))
 	{

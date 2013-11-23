@@ -4,13 +4,17 @@
 		$db = new PDO('sqlite:football.db');
 
 		// Nýjustu fréttir
-		$results = $db->query('SELECT * FROM USERS');
-		var_dump($results);
+		$results = $db->query("SELECT * FROM USERS WHERE Username='".$_POST['username']."'");
+		//var_dump($results);
+		if($results)
 		foreach($results as $data)
 		{
-			var_dump($data);
-			echo "lol";
+			if(md5($_POST['password']) == $data['Password'])
+				{setcookie('user',$_POST['username'],time()+300); header("Location:index.php?part=me");}
+			else
+				{echo "Innskráning mistókst, rangt lykilorð.";}
 		} 
+		else{ echo "Þessi notandi er ekki til.";}
 	}
 	else
 	{

@@ -42,7 +42,7 @@ else
 		$stmt->bindParam(':mn', $money);
 		
 		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$password = md5($_POST['password']);
 		$email = $_POST['email'];
 		$money = 100;
 		$stmt->execute();
@@ -52,6 +52,9 @@ else
 		{echo $_POST['username']." hefur verið bætt í gagnagrunninn!<br>";}
 		else
 		{echo "Villa kom upp: ".$errorAt[2];}
+
+		//loka tengingu
+		unset($db); unset ($stmt); unset($errorAt);
 	}			
 }
 ?>
