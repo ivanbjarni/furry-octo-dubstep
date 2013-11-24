@@ -16,7 +16,7 @@ $sessuser = $_SESSION['user'];
 	</head>
 
 	<body>
-	<script href="fbsdk.js"></script>
+	<script href="javascript/fbsdk.js"></script>
 	<div class="container">
 		<?php require 'utils.php'; ?>
 		<?php include'header.php'; ?>
