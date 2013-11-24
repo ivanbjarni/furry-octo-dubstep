@@ -6,6 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="sty.css">
 		<link rel="stylesheet" type="text/css" href="styles/passwordMeter.css">
 		<link rel="shortcut icon" href="bolti.ico">
+		<link rel="stylesheet" type="text/css" href="javascript/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+		<link type="text/css" rel="stylesheet" href="styles/jquery-ui.css"/>
 	</head>
 
 	<body>
