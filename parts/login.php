@@ -11,7 +11,7 @@
 		{
 			$found=1;
 			if(md5($_POST['password']) == $data['Password'])
-				{setcookie('user',$_POST['username'],time()+10000); echo "Velkominn ".$_POST['username']." <a href='?part=me'> Mínar Síður</a>"; }
+				{$_SESSION['user']=$_POST['username']; echo "Velkominn ".$_POST['username']." <a href='?part=me'> Mínar Síður</a>"; }
 			else
 				{echo "Innskráning mistókst, rangt lykilorð.";}
 		} 
