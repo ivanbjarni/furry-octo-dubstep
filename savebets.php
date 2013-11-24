@@ -7,7 +7,7 @@
 	$id = (int) substr($betchoice, 4);
 	$betc = substr($betchoice, 0, 4);
 
-	$results = $db->query('SELECT * FROM USERS WHERE Username="'.$_COOKIE['user'].'"');
+	$results = $db->query('SELECT * FROM USERS WHERE Username="'.$sessuser.'"');
 	$cash = 0;
 	$str = "";
 	$success = true;

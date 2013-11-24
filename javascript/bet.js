@@ -1,6 +1,6 @@
 $(function() {
 	$( "#slider" ).slider({
-		min: 0,
+		min: 1,
 		max: 1000,
 		values: [ 0 ],
 		slide: function( event, ui ) {
