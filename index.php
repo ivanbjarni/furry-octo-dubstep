@@ -31,6 +31,9 @@
 				case 'me':
 					include('parts/me.php');
 					break;
+				case 'logout':
+					include('parts/logout.php');
+					break;
 				case 'default':
 				default:
 					include('parts/default.php');
