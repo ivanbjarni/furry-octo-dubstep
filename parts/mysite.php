@@ -4,6 +4,9 @@
 	<?php
 	$db = new PDO('sqlite:football.db');
 
+	if(isset($_GET['getwinnings']))
+	{include ('calcWinnings.php');}
+
 	$results = $db->query("SELECT * FROM USERS WHERE Username='".$sessuser."'");
 
 	foreach($results as $data)
@@ -28,9 +31,9 @@
 				if($found==0){echo "<ul>";}
 				$found=1;
 
-				if($data['Bet']=='home'){echo "<li>Þú veðjaðir ".$data['Amount']." á ".$game['Home']." í leik: ".$game['Home']."(home) Vs. ".$game['Away']."(away). Stuðull: ".($game['Homewin']/100)."</li>";}
-				else if($data['Bet']=='away'){echo "<li>Þú veðjaðir ".$data['Amount']." á ".$game['Away']." í leik: ".$game['Home']."(home) Vs. ".$game['Away']."(away). Stuðull: ".($game['Awaywin']/100)."</li>";}
-				else {echo "<li>Þú veðjaðir ".$data['Amount']." á jafntefli í leik: ".$game['Home']."(home) Vs. ".$game['Away']."(away). Stuðull".($game['Draw']/100)."</li>";}
+				if($data['Bet']=='home'){echo "<li>Þú veðjaðir ".$data['Amount']."kr. á ".$game['Home']." í leik: ".$game['Home']."(home) Vs. ".$game['Away']."(away). Stuðull: ".($game['Homewin']/100)."</li>";}
+				else if($data['Bet']=='away'){echo "<li>Þú veðjaðir ".$data['Amount']."kr. á ".$game['Away']." í leik: ".$game['Home']."(home) Vs. ".$game['Away']."(away). Stuðull: ".($game['Awaywin']/100)."</li>";}
+				else {echo "<li>Þú veðjaðir ".$data['Amount']."kr. á jafntefli í leik: ".$game['Home']."(home) Vs. ".$game['Away']."(away). Stuðull: ".($game['Draw']/100)."</li>";}
 			}
 		} 
 		if($found==0){echo"Þú hefur ekki veðjað á neitt nýlega.";}

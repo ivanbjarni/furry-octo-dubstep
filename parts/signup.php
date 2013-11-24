@@ -49,7 +49,7 @@ else
 
 		$errorAt = $db->errorInfo();
 		if($errorAt[1]==NULL)
-		{echo $_POST['username']." hefur verið bætt í gagnagrunninn! <a href='?part=me&login=true'>Skrá inn.</a><br>";}
+		{echo "Notandinn ".$_POST['username']." hefur verið skráður! <a href='?part=me'>Innskráning.</a><br>";}
 		else
 		{echo "Villa kom upp: ".$errorAt[2]." <a href='?part=me&signup=step1'>Til baka.</a>";}
 
