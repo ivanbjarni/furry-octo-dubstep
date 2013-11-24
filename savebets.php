@@ -1,3 +1,7 @@
+<?php
+session_start();
+$sessuser = $_SESSION['user'];
+?>
 <?php 
 	$db = new PDO('sqlite:football.db');
 
