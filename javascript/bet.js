@@ -22,7 +22,15 @@ $(document).ready( function(){
 			betchoice : $("input:radio[name=group]:checked").val(),
 		},
 		function(data){
-			$("div.fancy").text(data);
+			var obj = $.parseJSON(data);
+			if(obj.success === "no"){
+				console.log("11");
+				$("div.fancy").append("<p>Þú átt ekki nægan pening fyrir þessu veðmáli</p>");
+			}
+			else{
+				console.log("22");
+				$("div.fancy").text(obj.str);
+			}
 		});
 	});
 
