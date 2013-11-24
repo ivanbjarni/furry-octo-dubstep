@@ -13,7 +13,7 @@
 		{
 			if ($count == 0){
 				echo '<li><h3>'.$data['Title'].'</h3>'.'<p>'.date('j.n.Y H:i', $data['Time']).'</p></li>';
-				echo '<p>'.cutString($data['Content']).'<a href="?part=news&Id='.$data['Id'].'"> Lesa meira</p>';
+				echo '<p>'.cutString($data['Content']).' <a href="?part=news&Id='.$data['Id'].'">Lesa meira</p>';
 			}
 			else{
 				echo '<li><h5><a href="?part=news&Id='.$data['Id'].'">'.$data['Title'].'</a></h5>';

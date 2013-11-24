@@ -16,38 +16,38 @@ $sessuser = $_SESSION['user'];
 	</head>
 
 	<body>
-	<script href="javascript/fbsdk.js"></script>
-	<div class="container">
-		<?php require 'utils.php'; ?>
-		<?php include'header.php'; ?>
-		
-		<?php
-			$part = 'default';
-			if (isset($_GET['part']))
-			{
-				$part = $_GET['part'];
-			}
-			switch ($part)
-			{
-				case 'news':
-					include('parts/news.php');
-					break;
-				case 'matches':
-					include('parts/matches.php');
-					break;
-				case 'me':
-					include('parts/me.php');
-					break;
-				case 'logout':
-					include('parts/logout.php');
-					break;
-				case 'default':
-				default:
-					include('parts/default.php');
-					break;
-			}
-		?>
-
+		<script href="javascript/fbsdk.js"></script>
+		<div class="container">
+			<?php require 'utils.php'; ?>
+			<?php include'header.php'; ?>
+			<div class="wrapper">
+				<?php
+					$part = 'default';
+					if (isset($_GET['part']))
+					{
+						$part = $_GET['part'];
+					}
+					switch ($part)
+					{
+						case 'news':
+							include('parts/news.php');
+							break;
+						case 'matches':
+							include('parts/matches.php');
+							break;
+						case 'me':
+							include('parts/me.php');
+							break;
+						case 'logout':
+							include('parts/logout.php');
+							break;
+						case 'default':
+						default:
+							include('parts/default.php');
+							break;
+					}
+				?>
+			</div>
 		</div>
 	</body>
 </html> 
