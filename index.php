@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 session_start();
 $sessuser = $_SESSION['user'];
 ?>
@@ -15,9 +16,9 @@ $sessuser = $_SESSION['user'];
 	</head>
 
 	<body>
-	<script href="fbsdk.js"></script>
+	<script href="javascript/fbsdk.js"></script>
 	<div class="container">
-		<?php include 'utils.php'; ?>
+		<?php require 'utils.php'; ?>
 		<?php include'header.php'; ?>
 		
 		<?php
