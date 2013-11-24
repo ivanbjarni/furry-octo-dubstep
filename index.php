@@ -1,3 +1,7 @@
+<?php
+session_start();
+$sessuser = $_SESSION['user'];
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>

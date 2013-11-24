@@ -1,10 +1,10 @@
 <h1>Mínar Síður</h1>
-<p> Þú ert skráður inn sem <?php echo $_COOKIE['user']; ?> </p>
+<p> Þú ert skráður inn sem <?php echo $sessuser; ?> </p>
 
 	<?php
 	$db = new PDO('sqlite:football.db');
 
-	$results = $db->query("SELECT * FROM USERS WHERE Username='".$_COOKIE['user']."'");
+	$results = $db->query("SELECT * FROM USERS WHERE Username='".$sessuser."'");
 
 	foreach($results as $data)
 		{
@@ -16,7 +16,7 @@
 	echo "<h2>Mín veðmál</h2>
 	<div class='bets'>";
 
-		$results = $db->query("SELECT * FROM BETS WHERE Username='".$_COOKIE['user']."'");
+		$results = $db->query("SELECT * FROM BETS WHERE Username='".$sessuser."'");
 		$found = 0;
 		if($results)
 		foreach($results as $data)

@@ -18,7 +18,7 @@
 				echo '<li><h2><span class="date">'.date('j.n.Y H:i', $data['Time']).'</span> <a href="?part=matches">'.$data['Home']." ".floor($data['Score']/100).' - '.($data['Score']%10)." ".$data['Away'].'</a></h2></li>';
 			}
 			echo '<div class="newsmatch_content">'.$data['Descr'];
-			if( isset($_COOKIE['user']) && time() < $data['Time'] ) {
+			if( isset($sessuser) && time() < $data['Time'] ) {
 				echo '<a class="fancybox fancybox.ajax" href="parts/bet.php?Id='.$data['Id'].'">Veðja á leik</a>';					
 			}
 			echo '</div>';

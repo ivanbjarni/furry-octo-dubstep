@@ -1,5 +1,5 @@
 <?php
-	if( isset($_COOKIE['user']))
+	if( isset($sessuser))
 	{
 		include('mysite.php');
 	}
