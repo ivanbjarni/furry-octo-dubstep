@@ -5,16 +5,17 @@
 
 		// Nýjustu fréttir
 		$results = $db->query("SELECT * FROM USERS WHERE Username='".$_POST['username']."'");
-		//var_dump($results);
+		$found=0;
 		if($results)
 		foreach($results as $data)
 		{
+			$found=1;
 			if(md5($_POST['password']) == $data['Password'])
-				{setcookie('user',$_POST['username'],time()+300); header("Location:index.php?part=me");}
+				{setcookie('user',$_POST['username'],time()+300); echo "Velkominn ".$_POST['username']." <a href='?part=me'> Mínar Síður</a>"; }
 			else
 				{echo "Innskráning mistókst, rangt lykilorð.";}
 		} 
-		else{ echo "Þessi notandi er ekki til.";}
+		if ($found==0){ echo "Þessi notandi er ekki til.";}
 	}
 	else
 	{
