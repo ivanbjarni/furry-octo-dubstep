@@ -1,10 +1,15 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
+session_start();
+$sessuser = $_SESSION['user'];
+?>
+<?php
 	echo '<div class="fancy">';
 		$db = new PDO('sqlite:../football.db');
 		$results = $db->query('SELECT * FROM MATCHES WHERE Id='.$_GET['Id']);
 		$foundabet = false;
 		foreach ($results as $data) {
-			$res = $db->query('SELECT * FROM BETS WHERE Id='.$data['Id'].' AND Username = "'.$_COOKIE['user'].'"');
+			$res = $db->query('SELECT * FROM BETS WHERE Id='.$data['Id'].' AND Username = "'.$sessuser.'"');
 			foreach ($res as $bet){
 				$foundabet = true;
 			}
@@ -29,7 +34,6 @@
 					<br>
 					<input id="bet_btn" type="submit" value="Veðja!"">
 				</form>
-				<div id="prump"></div>
 			</div>';
 		}
 		
