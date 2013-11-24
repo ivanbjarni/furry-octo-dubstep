@@ -10,14 +10,14 @@
 				<div id="slider"></div>
 				<form id="betform">
 					
-					<input type="radio" name ="group" value="h'.$data['Id'].'">
-					<label for="h'.$data['Id'].'">'.$data['Home']." vinnur (".($data['Homewin']/100).')</label>
+					<input type="radio" name ="group" value="home'.$data['Id'].'">
+					<label for="home'.$data['Id'].'">'.$data['Home']." vinnur (".($data['Homewin']/100).')</label>
 					<br>
-					<input type="radio" name ="group" value="d'.$data['Id'].'">
-					<label for="d'.$data['Id'].'">Jafntefli ('.($data['Draw']/100).')</label>
+					<input type="radio" name ="group" value="draw'.$data['Id'].'">
+					<label for="draw'.$data['Id'].'">Jafntefli ('.($data['Draw']/100).')</label>
 					<br>
-					<input type="radio" name ="group" value="a'.$data['Id'].'">
-					<label for="a'.$data['Id'].'">'.$data['Away']." vinnur (".($data['Awaywin']/100).')</label>
+					<input type="radio" name ="group" value="away'.$data['Id'].'">
+					<label for="away'.$data['Id'].'">'.$data['Away']." vinnur (".($data['Awaywin']/100).')</label>
 					<br>
 					<input id="bet_btn" type="submit" value="Veðja!"">
 				</form>
