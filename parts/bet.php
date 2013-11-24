@@ -33,6 +33,7 @@ $sessuser = $_SESSION['user'];
 					<label for="away'.$data['Id'].'">'.$data['Away']." vinnur (".($data['Awaywin']/100).')</label>
 					<br>
 					<input id="bet_btn" type="submit" value="Veðja!"">
+					<div id="response_msg"></div>
 				</form>
 			</div>';
 		}
