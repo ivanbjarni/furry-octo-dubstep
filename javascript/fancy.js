@@ -1,3 +1,6 @@
 $(document).ready(function() {
-			$('.fancybox').fancybox();
+			$('.fancybox').fancybox({
+				padding : 15,
+				scrolling : 'no',
+			});
 });

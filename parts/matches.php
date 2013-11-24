@@ -1,4 +1,4 @@
-<h1>Matches</h1>
+<h1 id="matches">Matches</h1>
 
 <?php
 
@@ -9,15 +9,18 @@
 	echo '<ul>';
 	foreach($results as $data)
 	{
+		echo '<div class="newsmatch-container">';
 		if( isset($_GET['Id']) && $data['Id'] == $_GET['Id'] ) {
 			if($data['Score'] == NULL){
 				echo '<li><h2><span class="date">'.date('j.n.Y H:i', $data['Time']).'</span> <a href="?part=matches">'.$data['Home'].' Vs.'.$data['Away'].'</a></h2></li>';	
-				echo '<a class="fancybox fancybox.ajax" href="parts/bet.php?Id='.$data['Id'].'">Veðja á leik</a>';
 			}
 			else{
 				echo '<li><h2><span class="date">'.date('j.n.Y H:i', $data['Time']).'</span> <a href="?part=matches">'.$data['Home']." ".floor($data['Score']/100).' - '.($data['Score']%10)." ".$data['Away'].'</a></h2></li>';
 			}
-			echo $data['Descr'];
+			echo '<div class="newsmatch_content">'.$data['Descr'];
+			//if( isset($_COOKIE['user']) && time() < $data['Time'] ) {
+				echo '<a class="fancybox fancybox.ajax" href="parts/bet.php?Id='.$data['Id'].'">Veðja á leik</a></div>';					
+			//}
 		}
 		else{
 			if($data['Score'] == NULL){
@@ -27,7 +30,7 @@
 				echo '<li><h2><span class="date">'.date('j.n.Y H:i', $data['Time']).'</span> <a href="?part=matches&Id='.$data['Id'].'">'.$data['Home']." ".floor($data['Score']/100).' - '.($data['Score']%10)." ".$data['Away'].'</a></h2></li>';
 			}
 		}
-		
+		echo '</div>';
 		echo "<hr>";
 	} 
 	echo '</ul>';

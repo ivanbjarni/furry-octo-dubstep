@@ -20,11 +20,11 @@
 	echo '<ul>';
 	foreach($results as $data)
 	{
-		echo '<div class="news">';
+		echo '<div class="newsmatch-container">';
 		if( isset($_GET['Id']) && $data['Id'] == $_GET['Id'] ){
 			echo '<li><h2><span class="date">'.date('j.n.Y H:i', $data['Time']).'</span> <a href="?part=news">'.$data['Title'].'</a></h2></li>';
-			echo $data['Content'];
-			echo '<div class="fb-comments" data-href="http://notendur.hi.is/ibj9/verkefni/hiddenlol/pmou/index.php?part=news&Id='.$data['Id'].'" data-numposts="5"></div>';
+			echo '<div class="newsmatch_content"><p>'.$data['Content'].'</p>';
+			echo '<div class="fb-comments" data-href="http://notendur.hi.is/ibj9/verkefni/hiddenlol/pmou/index.php?part=news&Id='.$data['Id'].'" data-numposts="5"></div></div>';
 		}
 		else{
 			echo '<li><h2><span class="date">'.date('j.n.Y H:i', $data['Time']).'</span> <a href="?part=news&Id='.$data['Id'].'">'.$data['Title'].'</a></h2></li>';
