@@ -1,1 +1,0 @@
-parent.location.reload(true);
