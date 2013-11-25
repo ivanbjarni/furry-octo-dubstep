@@ -20,7 +20,7 @@
 	foreach($results as $data)
 	{
 		echo '<div class="newsmatch-container">';
-			echo '<h2><span class="date">'.date('j.n.Y H:i', $data['Time']).'</span><span class="newsmatch_title">'.$data['Title'].'</span></h2>';
+			echo '<h2><span class="date">'.date('j.n.Y H:i', $data['Time']).' </span><span class="newsmatch_title">'.$data['Title'].'</span></h2>';
 			echo '<div class="newsmatch_content"';
 			if(isset($_GET['Id']) && $_GET['Id']==$data['Id']){echo ' id="nothide"';}
 			echo '><p>'.$data['Content'].'</p>';

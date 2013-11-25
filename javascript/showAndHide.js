@@ -14,5 +14,6 @@ $(document).ready(function()
 		console.log("hi");
 	});
 
+	$('html,body').animate({scrollTop: $("#nothide").parent().offset().top});
 
 });
