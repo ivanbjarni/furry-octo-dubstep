@@ -12,7 +12,7 @@ if($_GET['signup']=='step1')
 				<input id='password' type='password' name ='password' placeholder='Lykilorð'><br>
 				<div id='passwordStrengthDiv' class='is0'></div><br>
 				<label>Staðfesta:</label>
-				<input type='password' name ='cpassword' placeholder='Lykilorð'><br>
+				<input type='password' name ='cpassword' placeholder='Lykilorð aftur'><br>
 				<label>Netfang:</label>
 				<input type='text' name ='email' placeholder='john@example.com'><br>
 				<input type='submit' value='Skrá mig!'>
@@ -64,6 +64,7 @@ else
 }
 ?>
 
+<script src="javascript/jquery.js"></script>
 <script src="javascript/jquery.validate.js"></script>
 <script src="javascript/formhandling.js" type="text/javascript"></script>
 <script src="javascript/passwordMeter.js" type="text/javascript"></script>
