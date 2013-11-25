@@ -40,6 +40,6 @@
 		else {echo "</ul>";}
 	?>
 </div>
-<a href="?part=me&getwinnings=true">Sækja vinninga</a><br>
+<a href="?part=me&AMP;getwinnings=true">Sækja vinninga</a><br>
 
 <?php if(isset($_GET['getwinnings'])){echo "Þú safnaðir ".$winnings."kr. úr ".$found2." leik(jum).";} ?>
