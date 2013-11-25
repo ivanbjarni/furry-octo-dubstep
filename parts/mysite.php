@@ -1,5 +1,5 @@
-<h1>Mínar Síður</h1>
-<p> Þú ert skráður inn sem <?php echo $sessuser; ?> </p>
+<h1>Mínar síður</h1>
+<p> Þú ert skráð/ur inn sem <?php echo $sessuser; ?> </p>
 
 	<?php
 	$db = new PDO('sqlite:football.db');
@@ -40,4 +40,4 @@
 		else {echo "</ul>";}
 	?>
 </div>
-<a href="?part=me&getwinnings=true">Sækja Vinninga</a>
+<a href="?part=me&getwinnings=true">Sækja vinninga</a>

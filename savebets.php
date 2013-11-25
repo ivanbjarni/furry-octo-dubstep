@@ -27,7 +27,7 @@ $sessuser = $_SESSION['user'];
 			else{
 				$user = $data['Username'];
 				
-				$str = '{"success" : "yes", "str" : "Veðmálið hefur verið samþykkt þú ert '.$amount.' kr. fátækari"}';
+				$str = '{"success" : "yes", "str" : "Veðmálið hefur verið samþykkt. Þú ert nú '.$amount.' kr. fátækari"}';
 
 				$updateusers = $db->query('UPDATE USERS SET Cash='.($cash - $amount).' where Username = "'.$user.'"');
 
