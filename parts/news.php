@@ -17,20 +17,17 @@
 
 	// Nýjustu fréttir
 	$results = $db->query('SELECT * FROM NEWS ORDER BY Time DESC');
-	echo '<ul>';
 	foreach($results as $data)
 	{
 		echo '<div class="newsmatch-container">';
-		if( isset($_GET['Id']) && $data['Id'] == $_GET['Id'] ){
-			echo '<li><h2><span class="date">'.date('j.n.Y H:i', $data['Time']).'</span> <a href="?part=news">'.$data['Title'].'</a></h2></li>';
-			echo '<div class="newsmatch_content"><p>'.$data['Content'].'</p>';
-			echo '<div class="fb-comments" data-href="http://notendur.hi.is/ibj9/verkefni/hiddenlol/pmou/index.php?part=news&Id='.$data['Id'].'" data-numposts="5" data-colorscheme="dark"></div></div>';
-		}
-		else{
-			echo '<li><h2><span class="date">'.date('j.n.Y H:i', $data['Time']).'</span> <a href="?part=news&Id='.$data['Id'].'">'.$data['Title'].'</a></h2></li>';
-		}
+			echo '<h2><span class="date">'.date('j.n.Y H:i', $data['Time']).'</span><span class="newsmatch_title">'.$data['Title'].'</span></h2>';
+			echo '<div class="newsmatch_content"';
+			if(isset($_GET['Id']) && $_GET['Id']==$data['Id']){echo ' id="nothide"';}
+			echo '><p>'.$data['Content'].'</p>';
+			echo '<div class="fb-comments" data-href="http://notendur.hi.is/ibj9/verkefni/hiddenlol/pmou/index.php?part=news&AMP;Id='.$data['Id'].'" data-numposts="5" data-colorscheme="dark">
+			</div></div>';
+		
 		echo '</div>';
 		echo "<hr>";
 	} 
-	echo '</ul>';
 ?>

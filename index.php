@@ -6,17 +6,19 @@ $sessuser = $_SESSION['user'];
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Þar sem fótbolti er í fyrirrúmi</title>
+		<title>Hornspyrna - Þar sem fótbolti er í fyrirrúmi</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="sty.css">
 		<link rel="stylesheet" type="text/css" href="styles/passwordMeter.css">
 		<link rel="shortcut icon" href="bolti.ico">
 		<link rel="stylesheet" type="text/css" href="javascript/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
 		<link type="text/css" rel="stylesheet" href="styles/jquery-ui.css"/>
+		<script src="javascript/jquery.js"></script>
+		<script src="javascript/showAndHide.js"></script>
 	</head>
 
 	<body>
-		<script href="javascript/fbsdk.js"></script>
+		<script src="javascript/fbsdk.js"></script>
 		<div class="container">
 			<?php require 'utils.php'; ?>
 			<?php include'header.php'; ?>

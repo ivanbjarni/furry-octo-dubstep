@@ -1,4 +1,4 @@
-<h1>Velkomin á fótboltasíðuna!</h1>
+<h1>Velkomin á fótboltasíðuna Hornspyrna!</h1>
 
 <div class="feedbox">
 	<h2>Nýjustu fréttir</h2>
@@ -12,11 +12,11 @@
 		foreach($results as $data)
 		{
 			if ($count == 0){
-				echo '<li><h3><a href="?part=news&Id='.$data['Id'].'">'.$data['Title'].'</a></h3>'.'<p>'.date('j.n.Y H:i', $data['Time']).'</p></li>';
-				echo '<p>'.cutString($data['Content']).' <a href="?part=news&Id='.$data['Id'].'">Lesa meira</p>';
+				echo '<li><h3><a href="?part=news&AMP;Id='.$data['Id'].'">'.$data['Title'].'</a></h3>'.'<p>'.date('j.n.Y H:i', $data['Time']).'</p>';
+				echo '<p>'.cutString($data['Content']).' <a href="?part=news&AMP;Id='.$data['Id'].'">Lesa meira</a></p></li>';
 			}
 			else{
-				echo '<li><h3><a href="?part=news&Id='.$data['Id'].'">'.$data['Title'].'</a></h3></li>';
+				echo '<li><h3><a href="?part=news&AMP;Id='.$data['Id'].'">'.$data['Title'].'</a></h3></li>';
 			}
 			
 			$count++;
@@ -40,11 +40,11 @@
 		foreach($results as $data)
 		{
 			if ($count == 0){
-				echo '<li><h3><a href="?part=matches&Id='.$data['Id'].'">'.$data['Home'].' Vs. '.$data['Away'].'</a></h3>'.'<p>'.date('j.n.Y H:i', $data['Time']).'</p></li>';
-				echo '<p>'.cutString($data['Descr']).'</p>';
+				echo '<li><h3><a href="?part=matches&AMP;Id='.$data['Id'].'">'.$data['Home'].' Vs. '.$data['Away'].'</a></h3>'.'<p>'.date('j.n.Y H:i', $data['Time']).'</p>';
+				echo '<p>'.cutString($data['Descr']).' <a href="?part=news&AMP;Id='.$data['Id'].'">Lesa meira</a></p></li>';
 			}
 			else{
-				echo '<li><h3><a href="?part=matches&Id='.$data['Id'].'">'.$data['Home'].' Vs. '.$data['Away'].'</a></h3></li>';
+				echo '<li><h3><a href="?part=matches&AMP;Id='.$data['Id'].'">'.$data['Home'].' Vs. '.$data['Away'].'</a></h3></li>';
 			}
 
 			$count++;
@@ -70,11 +70,11 @@
 		{
 			if ($count == 0){
 				// echo '<h3>'.$data['Home'].' - '.$data['Away']." ".floor($data['Score']/100).' - '.($data['Score']%10).'</h3>';
-				echo '<li><h3><a href="?part=matches&Id='.$data['Id'].'">'.$data['Home']." ".floor($data['Score']/100).' - '.($data['Score']%10)." ".$data['Away'].'</a></h3></li>';
-				echo '<p>'.cutString($data['Descr']).'</p>';
+				echo '<li><h3><a href="?part=matches&AMP;Id='.$data['Id'].'">'.$data['Home']." ".floor($data['Score']/100).' - '.($data['Score']%10)." ".$data['Away'].'</a></h3>';
+				echo '<p>'.cutString($data['Descr']).' <a href="?part=news&AMP;Id='.$data['Id'].'">Lesa meira</a></p></li>';
 			}
 			else{
-				echo '<li><h3><a href="?part=matches&Id='.$data['Id'].'">'.$data['Home']." ".floor($data['Score']/100).' - '.($data['Score']%10)." ".$data['Away'].'</a></h3></li>';
+				echo '<li><h3><a href="?part=matches&AMP;Id='.$data['Id'].'">'.$data['Home']." ".floor($data['Score']/100).' - '.($data['Score']%10)." ".$data['Away'].'</a></h3></li>';
 			}
 
 			$count++;

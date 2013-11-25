@@ -1,5 +1,5 @@
 <div class="navbar">
-	<div class="title">Fótbolti!</div> 
+	<div class="title">Hornspyrna!</div> 
 	<div class="buttons">
 		<a class="btn" href="?part=default">Heim</a>
 		<a class="btn" href="?part=news">Fréttir</a>
