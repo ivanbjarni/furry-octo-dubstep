@@ -17,7 +17,7 @@ $(document).ready( function(){
 
 	$( "#bet_btn" ).click(function(event){
 		event.preventDefault();
-		if($('input:radio[name=group]:checked').size() > 0){
+		if($('input:radio[name=group]:checked').size() <= 0){
 			$('#response_msg').text("Þú verður að veðja á lið eða jafntefli");
 			return;
 		} 
@@ -30,7 +30,7 @@ $(document).ready( function(){
 			var obj = $.parseJSON(data);
 			if(obj.success === "no"){
 				console.log("11");
-				$("#response_msg").append("<p>Þú átt ekki nægan pening fyrir þessu veðmáli</p>");
+				$("#response_msg").text("Þú átt ekki nægan pening fyrir þessu veðmáli");
 			}
 			else{
 				console.log("22");
